@@ -1,0 +1,47 @@
+[project]
+name = "ppencv-car-counter-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sadae Negbane", email = "sadatenegbane@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "cvzone>=2.0.0",
+    "filterpy>=2.0.0",
+    "hydra-core>=1.3.8",
+    "lap>=0.5.14",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "opencv-python>=5.1.0.95",
+    "pillow>=13.0.0",
+    "pyyaml>=6.0.4",
+    "requests>=2.34.2",
+    "scikit-image",
+    "scipy>=1.18.1",
+    "torch",
+    "torchvision",
+    "tqdm>=4.70.1",
+    "ultralytics>=8.4.216",
+]
+
+[project.scripts]
+ppencv-car-counter-project = "ppencv_car_counter_project:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu126" },
+]
+torchvision = [
+    { index = "pytorch-cu126" },
+]
